@@ -1,0 +1,34 @@
+<div class="navbar">
+  <div class="navbar-logo">
+    <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" id="logo-circle" class="navbar-logo-image circle" src="/assets/Img/Logo.png" alt="Dublin Font with the Spire">
+    <br>
+    <span class="navbar-logo-image text">E-Portfolio Dublin</span>
+  </div>
+  <ul class="navbar-menu">
+    <li class="navbar-menu-item" id="anchor-Home">
+      <a >Home</a>
+    </li>
+    <li class="navbar-menu-item" id="anchor-Gallery">
+      <a >Gallery</a>
+    </li>
+    <li class="navbar-menu-item" id="anchor-Video">
+      <a >Video</a>
+    </li>
+  </ul>
+</div>
+
+<div #Home></div>
+<div>
+  <div>
+    <div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div #Gallery></div>
+
+<div #Video id="video" class="video-container">
+  <iframe class="video-player" allowfullscreen></iframe>
+</div>
