@@ -1,36 +1,37 @@
 <div class="navbar">
   <div class="navbar-logo">
     <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" id="logo-circle" class="navbar-logo-image circle" src="/assets/Img/Logo.png" alt="Dublin Font with the Spire">
-    <br>
-    <span class="navbar-logo-image text">E-Portfolio Dublin</span>
-
-    <ul class="navbar-menu">
-      <li class="navbar-menu-item" id="anchor-Home">
-        <a (click)="onScrollTo(Home)">Home</a>
-      </li>
-      <li class="navbar-menu-item" id="anchor-Gallery">
-        <a (click)="onScrollTo(Gallery)">Gallery</a>
-      </li>
-      <li class="navbar-menu-item" id="anchor-Video">
-        <a (click)="onScrollTo(Video)">Video</a>
-      </li>
-    </ul>
+    <h3 class="navbar-logo text">E-Portfolio Dublin</h3>
   </div>
+  <ul class="navbar-menu">
+    <li class="navbar-menu-item active" id="anchor-Home">
+      <a (click)="onScrollTo(Home)">Home</a>
+    </li>
+    <li class="navbar-menu-item" id="anchor-Gallery">
+      <a (click)="onScrollTo(Gallery)">Gallery</a>
+    </li>
+    <li class="navbar-menu-item" id="anchor-Video">
+      <a (click)="onScrollTo(Video)">Video</a>
+    </li>
+  </ul>
 </div>
 
-  <div #Home></div>
+<div #Home></div>
+<div>
   <div>
     <div>
       <div>
-        <div>
-        </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div #Gallery></div>
+<div #Gallery></div>
 
-  <div id="cover"></div>
-  <div #Video id="video" class="video-container">
-    <iframe class="video-player" allowfullscreen></iframe>
-  </div>
+<div id="cover"></div>
+<div #Video id="video" class="video-container">
+  <iframe class="video-player" allowfullscreen></iframe>
+</div>
+<footer>
+  <p>© Moiz Jamalia - 2022</p>
+</footer>
