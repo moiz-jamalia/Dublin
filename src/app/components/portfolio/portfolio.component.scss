@@ -1,13 +1,10 @@
 body {
-  margin: 0;
-  padding: 0;
   background-color: #5FB165;
 }
 
 .navbar {
   padding: 0;
   height: 10vh;
-  align-items: inherit;
   position: fixed;
   background-color: #287042;
   width: 100vw;
@@ -15,7 +12,7 @@ body {
 
   &-logo {
     height: 10vh;
-    width: 10vh;
+    width: 5vw;
     margin-left: 1vw;
     display: flex;
 
@@ -34,16 +31,20 @@ body {
       margin-top: 15%;
       height: 55%;
     }
+
   }
 
   &-menu {
-    display: inline-flex;
+    display: flex;
+    float: right;
     list-style: none;
     height: 10vh;
+    margin-top: 0;
     margin-bottom: 0;
     margin-right: 1vw;
 
     &-item {
+      margin-top: 0;
       width: 10vw;
       text-align: center;
       line-height: 10vh;
@@ -74,4 +75,21 @@ body {
       }
     }
   }
+}
+
+#cover {
+  background-color: #5FB165;
+  height: 100vh;
+  top: 585%;
+  position: absolute;
+  width: 100%;
+}
+
+.video-container {
+  background-color: #5FB165;
+  z-index: 10;
+  height: 90vh;
+  width: 100%;
+  position: absolute;
+  top: 500%;
 }

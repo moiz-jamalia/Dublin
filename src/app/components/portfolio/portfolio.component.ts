@@ -1,6 +1,7 @@
 import {Component, Renderer2} from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import {Router} from "@angular/router";
+import {Element} from "@angular/compiler";
 
 @Component({
   selector: 'app-portfolio',
@@ -15,5 +16,9 @@ export class PortfolioComponent {
 
   turnLogo(nb : number) {
     this.renderer.setStyle(document.getElementById('logo-circle'), 'transform', 'rotate(' + nb * 360 + 'deg)')
+  }
+
+  onScrollTo(el : HTMLElement) {
+    el.scrollIntoView({behavior : 'smooth'});
   }
 }

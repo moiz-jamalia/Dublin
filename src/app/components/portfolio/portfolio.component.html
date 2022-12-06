@@ -6,13 +6,13 @@
 
     <ul class="navbar-menu">
       <li class="navbar-menu-item" id="anchor-Home">
-        <a >Home</a>
+        <a (click)="onScrollTo(Home)">Home</a>
       </li>
       <li class="navbar-menu-item" id="anchor-Gallery">
-        <a >Gallery</a>
+        <a (click)="onScrollTo(Gallery)">Gallery</a>
       </li>
       <li class="navbar-menu-item" id="anchor-Video">
-        <a >Video</a>
+        <a (click)="onScrollTo(Video)">Video</a>
       </li>
     </ul>
   </div>
@@ -30,6 +30,7 @@
 
   <div #Gallery></div>
 
+  <div id="cover"></div>
   <div #Video id="video" class="video-container">
     <iframe class="video-player" allowfullscreen></iframe>
   </div>
