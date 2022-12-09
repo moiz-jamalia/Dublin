@@ -1,7 +1,6 @@
 import {Component, Renderer2} from '@angular/core';
 import {DomSanitizer} from "@angular/platform-browser";
 import {Router} from "@angular/router";
-import {Element} from "@angular/compiler";
 
 @Component({
   selector: 'app-portfolio',
