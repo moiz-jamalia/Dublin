@@ -29,9 +29,9 @@ body {
 
       h3 {
         position: fixed;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
         font-weight: bold;
-        color: white;
+        color: #FFFFFF;
         font-size: 3vh;
         text-align: center;
         line-height: 10vh;
@@ -111,6 +111,104 @@ body {
   }
 }
 
+#Home {
+
+}
+
+#gallery_view {
+  position: absolute;
+  top: 90vh;
+}
+
+.gallery-container {
+  background-color: #004519;
+  display: flex;
+  position: absolute;
+  top: 100%;
+  height: calc(400% - 11vh);
+  width: 100%;
+  overflow-x: hidden;
+
+  .gallery-content {
+    font-size: 3vh;
+
+    @media (max-width: 1140px) {
+      &-link {
+        width: 100% !important;
+        height: inherit !important;
+        line-height: inherit !important;
+      }
+
+      &-main {
+        &-image {
+          max-height: 70% !important;
+        }
+      }
+
+      .text {
+        margin-top: 1.5vh;
+      }
+    }
+
+    &-link {
+      width: 15%;
+      padding: 0;
+      cursor: pointer;
+      line-height: 85vh;
+      text-align: center;
+    }
+
+    &-main {
+      width: 70%;
+      padding: 0;
+
+      .original {
+        opacity: 0;
+      }
+
+      &-image {
+        max-width: 100%;
+        max-height: 90%;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: all 1s;
+      }
+
+      &-description {
+        opacity: 0;
+        max-width: 65vh;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: all 1s;
+      }
+
+      .portrait-image {
+        max-width: 45vh !important;
+      }
+
+      @media (max-width: 700px) {
+        &-description {
+          width: 45vw;
+        }
+      }
+    }
+  }
+}
+
+.gallery-item {
+  position: relative;
+  z-index: 10;
+  height: 90vh;
+  min-width: 100%;
+}
+
 #cover {
   background-color: #5FB165;
   height: 100vh;
@@ -135,6 +233,10 @@ body {
   border: none;
   width: 90%;
   height: 90%;
+}
+
+.text-white {
+  color: #FFFFFF;
 }
 
 .active {

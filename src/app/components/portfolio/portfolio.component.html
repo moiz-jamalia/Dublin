@@ -12,13 +12,14 @@
       <a (click)="onScrollTo(Home)">Home</a>
     </li>
     <li class="navbar-menu-item" ID="anchor-Gallery">
-      <a (click)="onScrollTo(Gallery)">Gallery</a>
+      <a (click)="onScrollTo(Gallery_view)">Gallery</a>
     </li>
     <li class="navbar-menu-item" ID="anchor-Video">
       <a (click)="onScrollTo(Video)">Video</a>
     </li>
   </ul>
 </div>
+
 
 <div #Home></div>
 <div>
@@ -28,7 +29,26 @@
   </div>
 </div>
 
-<div #Gallery></div>
+<div #Gallery_view id="gallery_view"></div>
+<div class="gallery-container">
+  <section class="gallery-item" *ngFor="let picture of pictures">
+    <div class="gallery-content">
+      <div>
+        <a (mouseenter)="unedited(true)" (mouseleave)="unedited(false)" class="gallery-content-link text-white">
+          <p>unedited</p>
+        </a>
+        <div class="gallery-content-main">
+          <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
+          <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
+          <p class="gallery-content-main-description text-white">{{picture.description}}</p>
+        </div>
+        <a (mouseenter)="description(true)" (mouseleave)="description(false)" class="gallery-content-link text-white">
+          <p>Description</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
 
 <div ID="cover"></div>
 <div #Video ID="video" class="video-container">
