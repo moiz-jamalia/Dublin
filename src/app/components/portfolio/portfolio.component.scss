@@ -23,6 +23,17 @@ body {
     display: flex;
     justify-content: left;
 
+    &-text {
+      position: fixed;
+      margin-left: 7vw;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      font-weight: bold;
+      color: white;
+      font-size: 3vh;
+      text-align: center;
+      line-height: 10vh;
+    }
+
     &-image {
       height: 85%;
       margin-top: 10%;
@@ -32,16 +43,6 @@ body {
       margin-left: 1vw;
       transition: all 0.5s;
     }
-  }
-
-  &-text {
-    float: left;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-weight: bold;
-    color: white;
-    font-size: 3vh;
-    text-align: center;
-    line-height: 10vh;
   }
 
     &-menu {
@@ -79,6 +80,11 @@ body {
   }
 
   @media (min-width: 720px) and (max-width: 1140px){
+    &-logo {
+      &-text {
+      margin-left: calc(4.5vw * 2);
+      }
+    }
     &-menu {
       &-item {
         width: calc(100vw / 7);
@@ -89,6 +95,10 @@ body {
   @media (max-width: 720px) {
     &-logo {
       display: none;
+
+      &-text {
+        margin-left: 3vw;
+      }
     }
 
     &-text {

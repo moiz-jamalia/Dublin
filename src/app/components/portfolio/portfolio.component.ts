@@ -1,5 +1,5 @@
 import {Component, Renderer2} from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {Router} from "@angular/router";
 
 @Component({
@@ -9,8 +9,11 @@ import {Router} from "@angular/router";
 })
 export class PortfolioComponent {
 
-  constructor(private router : Router, private renderer : Renderer2, private sanitizer : DomSanitizer) {
+  videoURL = 'https://www.youtube.com/embed/xm3YgoEiEDc';
+  safeURL : SafeResourceUrl;
 
+  constructor(private router : Router, private renderer : Renderer2, private sanitizer : DomSanitizer) {
+    this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
   }
 
   turnLogo(nb : number) {
