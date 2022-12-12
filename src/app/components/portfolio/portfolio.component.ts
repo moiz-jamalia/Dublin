@@ -1,7 +1,6 @@
 import {Component, Renderer2} from '@angular/core';
-import {DomSanitizer} from "@angular/platform-browser";
+import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {Router} from "@angular/router";
-import {Element} from "@angular/compiler";
 
 @Component({
   selector: 'app-portfolio',
@@ -10,15 +9,18 @@ import {Element} from "@angular/compiler";
 })
 export class PortfolioComponent {
 
-  constructor(private router : Router, private renderer : Renderer2, private sanitizer : DomSanitizer) {
+  videoURL = 'https://www.youtube.com/embed/xm3YgoEiEDc';
+  safeURL: SafeResourceUrl;
 
+  constructor(private router: Router, private renderer: Renderer2, private sanitizer: DomSanitizer) {
+    this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
   }
 
-  turnLogo(nb : number) {
+  turnLogo(nb: number) {
     this.renderer.setStyle(document.getElementById('logo-circle'), 'transform', 'rotate(' + nb * 360 + 'deg)')
   }
 
-  onScrollTo(el : HTMLElement) {
-    el.scrollIntoView({behavior : 'smooth'});
+  onScrollTo(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }
