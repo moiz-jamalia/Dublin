@@ -34,7 +34,7 @@
   <section class="gallery-item" *ngFor="let picture of pictures">
     <div class="gallery-content">
       <div>
-        <a (mouseenter)="unedited(true)" (mouseleave)="unedited(false)" class="gallery-content-link text-white">
+        <a  class="gallery-content-link text-white">
           <p>unedited</p>
         </a>
         <div class="gallery-content-main">
@@ -42,7 +42,7 @@
           <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
           <p class="gallery-content-main-description text-white">{{picture.description}}</p>
         </div>
-        <a (mouseenter)="description(true)" (mouseleave)="description(false)" class="gallery-content-link text-white">
+        <a class="gallery-content-link text-white">
           <p>Description</p>
         </a>
       </div>
