@@ -12,6 +12,7 @@ body {
   position: fixed;
   background-color: #287042;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100vw;
   z-index: 1000;
@@ -23,15 +24,19 @@ body {
     display: flex;
     justify-content: left;
 
-    &-text {
-      position: fixed;
-      margin-left: 7vw;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      font-weight: bold;
-      color: white;
-      font-size: 3vh;
-      text-align: center;
-      line-height: 10vh;
+    span {
+      margin-left: 1vw;
+
+      h3 {
+        position: fixed;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-weight: bold;
+        color: white;
+        font-size: 3vh;
+        text-align: center;
+        line-height: 10vh;
+        z-index: 0;
+      }
     }
 
     &-image {
@@ -45,7 +50,7 @@ body {
     }
   }
 
-    &-menu {
+  &-menu {
     display: flex;
     float: right;
     list-style: none;
@@ -56,10 +61,11 @@ body {
     &-item {
       float: right;
       margin-top: 0;
+      margin-right: 0;
       width: 10vw;
       text-align: center;
       line-height: 10vh;
-      font-size: 2.5vh;
+      font-size: 3.5vh;
       cursor: pointer;
 
       &-link {
@@ -75,16 +81,11 @@ body {
       text-decoration: underline;
       background-color: #004519;
       color: #FFFFFF;
-      transition: 0.6s;
+      transition: 1s;
     }
   }
 
-  @media (min-width: 720px) and (max-width: 1140px){
-    &-logo {
-      &-text {
-      margin-left: calc(4.5vw * 2);
-      }
-    }
+  @media (min-width: 720px) and (max-width: 1340px) {
     &-menu {
       &-item {
         width: calc(100vw / 7);
@@ -95,16 +96,11 @@ body {
   @media (max-width: 720px) {
     &-logo {
       display: none;
-
-      &-text {
-        margin-left: 3vw;
-      }
     }
 
     &-text {
       display: none;
     }
-
 
     &-menu {
       &-item {
@@ -125,17 +121,20 @@ body {
 
 .video-container {
   background-color: #5FB165;
-  z-index: 10;
+  z-index: 100;
   height: 90vh;
   width: 100%;
   position: absolute;
-  top: 500%;
+  top: 600%;
+  bottom: 1000%;
 }
 
 .video-player {
+  margin-left: 5vw;
+  margin-top: 5vh;
   border: none;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 
 .active {
@@ -143,20 +142,5 @@ body {
 
   a {
     cursor: default;
-  }
-}
-
-footer {
-  background-color: #287042;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10vh;
-  position: fixed;
-
-  p {
-    margin: 4vh;
-    text-align: center;
-    font-size: 3vh;
   }
 }

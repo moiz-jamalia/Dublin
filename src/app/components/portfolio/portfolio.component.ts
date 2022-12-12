@@ -10,17 +10,17 @@ import {Router} from "@angular/router";
 export class PortfolioComponent {
 
   videoURL = 'https://www.youtube.com/embed/xm3YgoEiEDc';
-  safeURL : SafeResourceUrl;
+  safeURL: SafeResourceUrl;
 
-  constructor(private router : Router, private renderer : Renderer2, private sanitizer : DomSanitizer) {
+  constructor(private router: Router, private renderer: Renderer2, private sanitizer: DomSanitizer) {
     this.safeURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoURL);
   }
 
-  turnLogo(nb : number) {
+  turnLogo(nb: number) {
     this.renderer.setStyle(document.getElementById('logo-circle'), 'transform', 'rotate(' + nb * 360 + 'deg)')
   }
 
-  onScrollTo(el : HTMLElement) {
-    el.scrollIntoView({behavior : 'smooth'});
+  onScrollTo(el: HTMLElement) {
+    el.scrollIntoView({behavior: 'smooth'});
   }
 }

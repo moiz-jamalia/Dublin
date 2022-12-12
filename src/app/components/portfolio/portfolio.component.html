@@ -1,17 +1,20 @@
 <div class="navbar">
   <div class="navbar-logo">
-    <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" id="logo-circle" class="navbar-logo-image circle" src="/assets/Img/Logo.png" alt="Dublin Font with the Spire">
-    <h3 class="navbar-logo-text">E-Portfolio Dublin</h3>
+    <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" ID="logo-circle" class="navbar-logo-image circle"
+         src="/assets/Img/Logo.png" alt="Dublin Font with the Spire">
+    <span>
+      <h3>Dublin</h3>
+    </span>
   </div>
 
   <ul class="navbar-menu">
-    <li class="navbar-menu-item active" id="anchor-Home">
+    <li class="navbar-menu-item" ID="anchor-Home">
       <a (click)="onScrollTo(Home)">Home</a>
     </li>
-    <li class="navbar-menu-item" id="anchor-Gallery">
+    <li class="navbar-menu-item" ID="anchor-Gallery">
       <a (click)="onScrollTo(Gallery)">Gallery</a>
     </li>
-    <li class="navbar-menu-item" id="anchor-Video">
+    <li class="navbar-menu-item" ID="anchor-Video">
       <a (click)="onScrollTo(Video)">Video</a>
     </li>
   </ul>
@@ -21,17 +24,14 @@
 <div>
   <div>
     <div>
-      <div>
-      </div>
     </div>
   </div>
 </div>
 
 <div #Gallery></div>
 
-<div #Video id="video" class="video-container">
+<div ID="cover"></div>
+<div #Video ID="video" class="video-container">
   <iframe class="video-player" [src]="safeURL" allowfullscreen></iframe>
 </div>
-<footer>
-  <p>© Moiz Jamalia - 2022</p>
-</footer>
+

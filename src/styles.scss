@@ -18,3 +18,26 @@ body::-webkit-scrollbar {
 header, nav {
   display: none;
 }
+
+footer {
+  background-color: #287042;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  z-index: 1000;
+
+  p {
+    color: #FFFFFF;
+    margin: 4vh;
+    text-align: center;
+    font-size: 3vh;
+
+    @media (max-width: 350px){
+      font-size: 2vh;
+    }
+  }
+}
+
