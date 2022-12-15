@@ -153,28 +153,6 @@ body {
     background: url("~src/assets/Img/gallery/Sea_original.png");
     background-size: cover !important;
   }
-
-  h1 {
-    color: #005eea;
-    text-transform: uppercase;
-    font-size: 50px;
-    font-weight: 900;
-    margin-bottom: 20px;
-  }
-
-  p {
-    color: #fff;
-    margin-bottom: 20px;
-  }
-
-  @keyframes anim {
-    50% {
-      transform: scale(2);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 }
 
 #gallery_view {
@@ -184,7 +162,6 @@ body {
 
 .gallery-container {
   background-color: #004519;
-  display: flex;
   position: absolute;
   top: 100%;
   height: calc(400% - 11vh);
@@ -200,10 +177,9 @@ body {
         height: inherit !important;
         line-height: inherit !important;
       }
-
       &-main {
         &-image {
-          max-height: 70% !important;
+          max-height: 80% !important;
         }
       }
 
@@ -216,7 +192,7 @@ body {
       width: 15%;
       padding: 0;
       cursor: pointer;
-      line-height: 85vh;
+      line-height: 89vh;
       text-align: center;
     }
 
@@ -227,33 +203,32 @@ body {
       .original {
         opacity: 0;
       }
-
       &-image {
-        max-width: 50%;
-        max-height: 20%;
+        max-height: 100%;
+        max-width: 80%;
         margin: 0;
         position: absolute;
-        top: 50%;
+        top: 51.5%;
         left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: all 1s;
+        -ms-transform: translate(-50%, -52%);
+        transform: translate(-50%, -52%);
+        transition: all 0.5s;
       }
-
       &-description {
         opacity: 0;
         max-width: 65vh;
         position: absolute;
         top: 50%;
         left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        transition: all 1s;
+        transform: translate(-50%, -52%);
+        transition: all 0.5s;
       }
-
+      .portrait-image {
+        max-width: 45vh !important;
+      }
       @media (max-width: 700px) {
-        &-description {
-          width: 45vw;
+        &-reflection {
+          width: 44vh;
         }
       }
     }
@@ -274,8 +249,8 @@ body {
 
 #cover {
   background-color: #5FB165;
-  height: 100vh;
-  top: 585%;
+  height: 65vh;
+  top: 520%;
   position: absolute;
   width: 100%;
 }
@@ -283,11 +258,10 @@ body {
 .video-container {
   background-color: #5FB165;
   z-index: 100;
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   position: absolute;
-  top: 580%;
-  bottom: 1000%;
+  top: 480%;
 }
 
 .video-player {
@@ -295,7 +269,7 @@ body {
   margin-top: 20vh;
   border: none;
   width: 90%;
-  height: 80%;
+  height: 70%;
 }
 
 .text-white {

@@ -15,6 +15,11 @@ export class PicturesService {
       'assets/Img/gallery/Sea_original.png',
       'assets/Img/gallery/Sea_edited.png',
       'Sea2'
+    ),
+    new Pictures(
+      'assets/Img/gallery/Sea_original.png',
+      'assets/Img/gallery/Sea_edited.png',
+      'Sea2'
     )
   ];
 

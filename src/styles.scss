@@ -15,8 +15,8 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-header, nav {
-  display: none;
+header, nav, section {
+  display: block;
 }
 
 footer {

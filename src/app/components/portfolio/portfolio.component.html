@@ -9,13 +9,13 @@
   </div>
 
   <ul class="navbar-menu">
-    <li class="navbar-menu-item" ID="anchor-Home">
+    <li class="navbar-menu-item" id="anchor-Home">
       <a (click)="onScrollTo(Home)">Home</a>
     </li>
-    <li class="navbar-menu-item" ID="anchor-Gallery">
+    <li class="navbar-menu-item" id="anchor-Gallery">
       <a (click)="onScrollTo(Gallery_view)">Gallery</a>
     </li>
-    <li class="navbar-menu-item" ID="anchor-Video">
+    <li class="navbar-menu-item" id="anchor-Video">
       <a (click)="onScrollTo(Video)">Video</a>
     </li>
   </ul>
@@ -30,7 +30,7 @@
 </div>
 
 <div class="title">
-  <img ID="title-logo" src="assets/Img/Logo.svg" class="image-circle" alt="Logo Dublin">
+  <img id="title-logo" src="assets/Img/Logo.svg" class="image-circle" alt="Logo Dublin">
   <p>
     This is a ePortfolio about my English Stay in Dublin, Ireland in 2022.
   </p>
@@ -43,21 +43,19 @@
       <div class="gallery-content">
         <div class="margin-0">
           <a
-            (mouseenter)="unedited(true)" (mouseleave)="unedited(false)"
-            class="gallery-content-link text-white wide-text-left">
-            <p>unedited</p>
+            class="gallery-content-link text-white">
+            <p (mouseenter)="unedited(true)" (mouseleave)="unedited(false)">unedited</p>
           </a>
           <div class="gallery-content-main">
             <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
-            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
-            <p class="gallery-content-main-reflection text-white">
+            <p class="gallery-content-main-description text-white">
               {{picture.description}}
             </p>
+            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
           </div>
           <a
-            (mouseenter)="description(true)" (mouseleave)="description(false)"
             class="gallery-content-link text-red wide-text-right">
-            <p>description</p>
+            <p (mouseenter)="description(true)" (mouseleave)="description(false)">description</p>
           </a>
         </div>
       </div>
@@ -65,8 +63,8 @@
   </div>
 </div>
 
-<div ID="cover"></div>
-<div ID="video" class="video-container">
-  <iframe #Video class="video-player" [src]="safeURL" allowfullscreen></iframe>
+<div #Video id="cover"></div>
+<div id="video" class="video-container">
+  <iframe  class="video-player" [src]="safeURL" allowfullscreen></iframe>
 </div>
 
