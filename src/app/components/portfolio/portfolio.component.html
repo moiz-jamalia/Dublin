@@ -1,9 +1,10 @@
 <div class="navbar">
   <div class="navbar-logo">
-    <img (mouseenter)="turnLogo(1)" (mouseleave)="turnLogo(-1)" ID="logo-circle" class="navbar-logo-image circle"
-         src="/assets/Img/Logo.png" alt="Dublin Font with the Spire">
+    <img (mouseenter)="turnLogo(1, 'logo-circle')" (mouseleave)="turnLogo(-1, 'logo-circle')" ID="logo-circle"
+         class="navbar-logo-image circle"
+         src="/assets/Img/Logo.svg" alt="Dublin Font with the Spire">
     <span>
-      <h3>Dublin</h3>
+      <h3>ePortfolio Dublin</h3>
     </span>
   </div>
 
@@ -20,38 +21,51 @@
   </ul>
 </div>
 
-
 <div #Home></div>
-<div>
-  <div>
-    <div>
+<div id="Home" class="home">
+  <div class="home-page">
+    <div class="home-page-content">
     </div>
   </div>
 </div>
 
-<div #Gallery_view id="gallery_view"></div>
-<div class="gallery-container">
-  <section class="gallery-item" *ngFor="let picture of pictures">
-    <div class="gallery-content">
-      <div>
-        <a  class="gallery-content-link text-white">
-          <p>unedited</p>
-        </a>
-        <div class="gallery-content-main">
-          <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
-          <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
-          <p class="gallery-content-main-description text-white">{{picture.description}}</p>
-        </div>
-        <a class="gallery-content-link text-white">
-          <p>Description</p>
-        </a>
-      </div>
-    </div>
-  </section>
+<div class="title">
+  <img ID="title-logo" src="assets/Img/Logo.svg" class="image-circle" alt="Logo Dublin">
+  <p>
+    This is a ePortfolio about my English Stay in Dublin, Ireland in 2022.
+  </p>
 </div>
 
-<div ID="cover"></div>
-<div #Video ID="video" class="video-container">
-  <iframe class="video-player" [src]="safeURL" allowfullscreen></iframe>
+<div #Gallery_view id="gallery_view"></div>
+<div id="gallery" class="gallery-container">
+  <div>
+    <section id="gallery-item-{{i + 1}}" class="gallery-item" *ngFor="let picture of pictures; let i = index">
+      <div class="gallery-content">
+        <div class="margin-0">
+          <a
+            (mouseenter)="unedited(true)" (mouseleave)="unedited(false)"
+            class="gallery-content-link text-white wide-text-left">
+            <p>unedited</p>
+          </a>
+          <div class="gallery-content-main">
+            <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
+            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
+            <p class="gallery-content-main-reflection text-white">
+              {{picture.description}}
+            </p>
+          </div>
+          <a
+            (mouseenter)="description(true)" (mouseleave)="description(false)"
+            class="gallery-content-link text-red wide-text-right">
+            <p>description</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div ID="video" class="video-container">
+  <iframe #Video class="video-player" [src]="safeURL" allowfullscreen></iframe>
 </div>
 

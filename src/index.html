@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Dublin</title>
+  <title>ePortfolio Dublin</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/Img/Logo.png">
+  <link rel="icon" type="image/x-icon" href="assets/Img/Logo.svg">
 </head>
 <body>
 <app-root></app-root>
 <footer>
-  <p>&#169 Moiz Jamalia 2022 -
+  <p>&#169 Moiz Jamalia 2022
     <script type="text/javascript">
-      document.write(new Date().getFullYear().toString());
+      const year = new Date().getFullYear().toString();
+      if (year !== '2022') document.write(' - ' + year);
     </script>
   </p>
 </footer>

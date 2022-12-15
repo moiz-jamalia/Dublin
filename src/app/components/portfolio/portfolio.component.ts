@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, Renderer2, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {Router} from "@angular/router";
 import {PicturesService} from "../../../pictures.service";
@@ -9,10 +9,10 @@ import {Pictures} from "../../pictures.model";
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss']
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit{
 
   @ViewChild('Home') home : ElementRef | any;
-  @ViewChild('Gallery_view') gallery : ElementRef | any;
+  @ViewChild('gallery') gallery : ElementRef | any;
   @ViewChild('Video') video : ElementRef | any;
   videoURL = 'https://www.youtube.com/embed/xm3YgoEiEDc';
   safeURL: SafeResourceUrl;
@@ -26,32 +26,37 @@ export class PortfolioComponent {
     this.pictures = this.picService.getPictures();
   }
 
-  turnLogo(nb: number) {
-    this.renderer.setStyle(document.getElementById('logo-circle'), 'transform', 'rotate(' + nb * 360 + 'deg)')
+  ngOnInit(): void {
+      this.turnLogo(1, 'title-logo');
+    }
+
+  turnLogo(nb: number, id : string) {
+    this.renderer.setStyle(document.getElementById(id), 'transform', 'rotate(' + nb * 360 + 'deg)')
   }
-/*
+
   @HostListener('window:scroll', ['$event'])
   onScroll(event : any) : void {
     // @ts-ignore
     const parent : HTMLElement = document.getElementById('gallery');
     const galleryOffSet = Math.round(window.pageYOffset - (this.gallery.nativeElement.offsetHeight / 4 - (0.11 * this.gallery.nativeElement.offsetHeight / 5)));
+    console.log(galleryOffSet);
 
     if (galleryOffSet >= 0 && galleryOffSet <= 24000) {
-      this.hightlight('gallery-link', 'home-link', 'video-link')
+      this.hightLight('anchor-Gallery', 'anchor-Home', 'anchor-Video')
       this.itemFocus = this.checkWhichGalleryItem(galleryOffSet);
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '11vh');
-        this.renderer.setStyle(parent.children[i], 'height', '89vh');
+        this.renderer.setStyle(parent.children[i], 'height', '90vh');
         this.renderer.setStyle(parent.children[i], 'left', ((i * 100) - (Math.round(galleryOffSet / 6))) + '%');
       }
     } else if (galleryOffSet > 2400) {
-      this.hightlight('video-link', 'home-link', 'gallery-link');
+      this.hightLight('anchor-Video', 'anchor-Home', 'anchor-Gallery');
       this.renderer.setStyle(parent.children[parent.children.length - 1], 'left', '0');
     } else {
-      this.hightlight('home-link', 'gallery-link', 'video-link');
+      this.hightLight('anchor-Home', 'anchor-Gallery', 'anchor-Video');
       for (let i = 0; i < parent.children.length; i++) {
-        this.renderer.setStyle(document.getElementById('landing'), 'visibility', 'visible');
+        this.renderer.setStyle(document.getElementById('Home'), 'visibility', 'visible');
         this.renderer.setStyle(parent.children[i], 'position', 'relative');
         this.renderer.removeStyle(parent.children[i], 'top');
         this.renderer.removeStyle(parent.children[i], 'left');
@@ -64,7 +69,7 @@ export class PortfolioComponent {
     if (this.itemFocus <= 0) return
     this.isShownOriginalPic = !showOriginal
     // @ts-ignore
-    let elements = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.original')
+    let elements = document.getElementById('gallery-item-' + this.giInFocus).querySelectorAll('.original')
     for (let i = 0; i < elements.length; i++) {
       if(!this.isShownOriginalPic) {
         this.renderer.setStyle(elements[i], 'opacity', '1');
@@ -80,9 +85,9 @@ export class PortfolioComponent {
     if (this.itemFocus <= 0) return
     this.isShownDescription = !showReflection
     // @ts-ignore
-    let descriptions = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.gallery-content-main-reflection')
+    let descriptions = document.getElementById('gallery-item-' + this.giInFocus).querySelectorAll('.gallery-content-main-reflection')
     // @ts-ignore
-    let images = document.getElementById('gallery-item-'+this.giInFocus).querySelectorAll('.edited')
+    let images = document.getElementById('gallery-item-' + this.giInFocus).querySelectorAll('.edited')
     for (let i = 0; i < descriptions.length; i++) {
       if(!this.isShownDescription) {
         this.renderer.setStyle(descriptions[i], 'opacity', '1');
@@ -130,7 +135,7 @@ export class PortfolioComponent {
     this.isShownDescription = false;
     this.isShownOriginalPic = false;
   }
-  hightlight(active : string, inactive : string, inactive2 : string) {
+  hightLight(active : string, inactive : string, inactive2 : string) {
     //@ts-ignore
     document.getElementById(active).classList.add('active');
     //@ts-ignore
@@ -138,8 +143,6 @@ export class PortfolioComponent {
     //@ts-ignore
     document.getElementById(inactive2).classList.remove('active');
   }
-
- */
 
   onScrollTo(el: HTMLElement) {
     el.scrollIntoView({behavior: 'smooth'});

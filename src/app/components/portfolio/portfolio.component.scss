@@ -111,8 +111,70 @@ body {
   }
 }
 
-#Home {
+.title {
+  position: fixed;
+  top: calc(40% + 5.2vh);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 0 40px;
 
+  p {
+    margin: 10px auto auto;
+    width: 70%;
+  }
+}
+
+.image-circle {
+  margin-top: 11vh;
+  margin-left: 1vw;
+  transition: all 2s;
+  height: 70%;
+  width: 50%;
+}
+
+.home-page {
+  width: 100%;
+  height: 100vh;
+  background: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("~src/assets/Img/gallery/Sea_original.png");
+    background-size: cover !important;
+  }
+
+  h1 {
+    color: #005eea;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  @keyframes anim {
+    50% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 #gallery_view {
@@ -167,8 +229,8 @@ body {
       }
 
       &-image {
-        max-width: 100%;
-        max-height: 90%;
+        max-width: 50%;
+        max-height: 20%;
         margin: 0;
         position: absolute;
         top: 50%;
@@ -189,10 +251,6 @@ body {
         transition: all 1s;
       }
 
-      .portrait-image {
-        max-width: 45vh !important;
-      }
-
       @media (max-width: 700px) {
         &-description {
           width: 45vw;
@@ -207,6 +265,11 @@ body {
   z-index: 10;
   height: 90vh;
   min-width: 100%;
+  background-color: #5FB165;
+}
+
+.gallery-item:nth-child(even) {
+  background-color: #287042;
 }
 
 #cover {
@@ -223,16 +286,16 @@ body {
   height: 90vh;
   width: 100%;
   position: absolute;
-  top: 600%;
+  top: 580%;
   bottom: 1000%;
 }
 
 .video-player {
   margin-left: 5vw;
-  margin-top: 5vh;
+  margin-top: 20vh;
   border: none;
   width: 90%;
-  height: 90%;
+  height: 80%;
 }
 
 .text-white {
