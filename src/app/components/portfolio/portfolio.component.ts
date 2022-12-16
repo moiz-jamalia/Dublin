@@ -34,7 +34,7 @@ export class PortfolioComponent implements OnInit {
     //console.log('height: ' + parent.offsetTop)
     console.log('Offset: ' + Offset);
 
-    if (Offset >= 0 && Offset <= 1800) {
+    if (Offset >= 0 && Offset <= 2000) {
       this.highlight('anchor-Gallery', 'anchor-Home', 'anchor-Video');
       this.itemFocus = this.checkWhichGalleryItem(Offset);
       console.log(this.itemFocus);
@@ -44,7 +44,7 @@ export class PortfolioComponent implements OnInit {
         this.renderer.setStyle(parent.children[i], 'height', '57vh');
         this.renderer.setStyle(parent.children[i], 'left', (i * 100) - (Math.round(Offset / 10.25)) + '%');
       }
-    } else if (Offset > 1800) {
+    } else if (Offset > 1900) {
       this.highlight('anchor-Video', 'anchor-Home', 'anchor-Gallery');
       this.renderer.setStyle(parent.children[parent.children.length - 1], 'left', 0);
       this.renderer.setStyle(parent.children[parent.children.length - 1], 'width', '100%');
@@ -65,7 +65,7 @@ export class PortfolioComponent implements OnInit {
     switch (true) {
       case galleryOffset >= 0 && galleryOffset <= 490: return 1;
       case galleryOffset >= 500 && galleryOffset <= 1080: return 2;
-      case galleryOffset >= 1180 && galleryOffset <= 1800: return 3;
+      case galleryOffset >= 1180 && galleryOffset <= 2420: return 3;
     }
     this.resetOptions();
     return 0;
