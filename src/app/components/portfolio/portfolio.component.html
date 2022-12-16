@@ -38,23 +38,23 @@
 
 <div #Gallery_view id="gallery_view"></div>
 <div id="gallery" class="gallery-container">
-  <div>
-    <section id="gallery-item-{{i + 1}}" class="gallery-item" *ngFor="let picture of pictures; let i = index">
+  <div *ngFor="let picture of pictures; let i = index">
+    <section id="gallery-item-{{i + 1}}" class="gallery-item">
       <div class="gallery-content">
         <div class="margin-0">
           <a
-            class="gallery-content-link text-white">
+            class="gallery-content-link text-white wide-text-left">
             <p (mouseenter)="unedited(true)" (mouseleave)="unedited(false)">unedited</p>
           </a>
           <div class="gallery-content-main">
+            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
             <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
             <p class="gallery-content-main-description text-white">
               {{picture.description}}
             </p>
-            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
           </div>
           <a
-            class="gallery-content-link text-red wide-text-right">
+            class="gallery-content-link text-white wide-text-right">
             <p (mouseenter)="description(true)" (mouseleave)="description(false)">description</p>
           </a>
         </div>

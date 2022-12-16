@@ -166,6 +166,7 @@ body {
   top: 100%;
   height: calc(400% - 11vh);
   width: 100%;
+  overflow-y: hidden;
   overflow-x: hidden;
 
   .gallery-content {
@@ -192,7 +193,7 @@ body {
       width: 15%;
       padding: 0;
       cursor: pointer;
-      line-height: 89vh;
+      height: 90vh;
       text-align: center;
     }
 
@@ -204,11 +205,11 @@ body {
         opacity: 0;
       }
       &-image {
-        max-height: 100%;
+        max-height: 70%;
         max-width: 80%;
         margin: 0;
         position: absolute;
-        top: 51.5%;
+        top: 48.5%;
         left: 50%;
         -ms-transform: translate(-50%, -52%);
         transform: translate(-50%, -52%);
@@ -223,9 +224,7 @@ body {
         transform: translate(-50%, -52%);
         transition: all 0.5s;
       }
-      .portrait-image {
-        max-width: 45vh !important;
-      }
+
       @media (max-width: 700px) {
         &-reflection {
           width: 44vh;
@@ -274,6 +273,22 @@ body {
 
 .text-white {
   color: #FFFFFF;
+
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1140px) {
+  .wide-text {
+    &-left {
+      margin-left: 2%;
+    }
+    &-right {
+      width: 9% !important;
+      margin-left: -1.5%;
+    }
+  }
 }
 
 .active {
