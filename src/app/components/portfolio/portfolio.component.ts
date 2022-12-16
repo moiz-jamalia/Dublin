@@ -31,12 +31,13 @@ export class PortfolioComponent implements OnInit {
     // @ts-ignore
     const parent: HTMLElement = document.getElementById('gallery');
     const Offset: number = Math.round((window.scrollY - parent.offsetTop)  - (this.gallery.nativeElement.offsetHeight / 3 - (0.1 * this.gallery.nativeElement.offsetHeight / 4)));
-    console.log('height: ' + parent.offsetTop)
+    //console.log('height: ' + parent.offsetTop)
     console.log('Offset: ' + Offset);
 
     if (Offset >= 0 && Offset <= 1800) {
       this.highlight('anchor-Gallery', 'anchor-Home', 'anchor-Video');
       this.itemFocus = this.checkWhichGalleryItem(Offset);
+      console.log(this.itemFocus);
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '10vh');
@@ -62,10 +63,9 @@ export class PortfolioComponent implements OnInit {
 
   checkWhichGalleryItem(galleryOffset: number): number {
     switch (true) {
-      case galleryOffset >= 0 && galleryOffset <= 20: return 1;
-      case galleryOffset >= 580 && galleryOffset <= 620: return 2;
-      case galleryOffset >= 1180 && galleryOffset <= 1220: return 3;
-      case galleryOffset >= 1780 && galleryOffset <= 1820: return 4;
+      case galleryOffset >= 0 && galleryOffset <= 490: return 1;
+      case galleryOffset >= 500 && galleryOffset <= 1080: return 2;
+      case galleryOffset >= 1180 && galleryOffset <= 1800: return 3;
     }
     this.resetOptions();
     return 0;
@@ -104,12 +104,17 @@ export class PortfolioComponent implements OnInit {
   unedited(showOriginal: boolean) {
     this.isShownOriginalPic = !showOriginal
     // @ts-ignore
-    let elements = document.getElementById('gallery-item-1').querySelectorAll('.original');
+    let elements = document.getElementById('gallery-item-' + this.itemFocus).querySelectorAll('.original');
+    // @ts-ignore
+    let descriptions = document.getElementById('gallery-item-' + this.itemFocus).querySelectorAll('.gallery-content-main-description');
+
     for (let i = 0; i < elements.length; i++) {
       if (!this.isShownOriginalPic) {
         this.renderer.setStyle(elements[i], 'opacity', '1');
+        this.renderer.setStyle(descriptions[i], 'opacity', '0');
       } else {
         this.renderer.removeStyle(elements[i], 'opacity');
+        this.renderer.removeStyle(descriptions[i], 'opacity');
       }
     }
     this.isShownOriginalPic = !this.isShownOriginalPic;
@@ -119,15 +124,15 @@ export class PortfolioComponent implements OnInit {
   description(showReflection: boolean) {
     this.isShownDescription = showReflection;
     // @ts-ignore
-    let reflections = document.getElementById('gallery-item-1').querySelectorAll('.gallery-content-main-description');
+    let descriptions = document.getElementById('gallery-item-' + this.itemFocus).querySelectorAll('.gallery-content-main-description');
     // @ts-ignore
-    let images = document.getElementById('gallery-item-1').querySelectorAll('.edited');
-    for (let i = 0; i < reflections.length; i++) {
+    let images = document.getElementById('gallery-item-' + this.itemFocus).querySelectorAll('.edited');
+    for (let i = 0; i < descriptions.length; i++) {
       if (!this.isShownDescription) {
-        this.renderer.setStyle(reflections[i], 'opacity', '1');
+        this.renderer.setStyle(descriptions[i], 'opacity', '1');
         this.renderer.setStyle(images[i], 'opacity', '0.3');
       } else {
-        this.renderer.removeStyle(reflections[i], 'opacity');
+        this.renderer.removeStyle(descriptions[i], 'opacity');
         this.renderer.removeStyle(images[i], 'opacity');
       }
     }
