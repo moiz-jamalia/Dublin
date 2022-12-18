@@ -13,7 +13,7 @@
       <a (click)="onScrollTo(Home)">Home</a>
     </li>
     <li class="navbar-menu-item" id="anchor-Gallery">
-      <a (click)="onScrollTo(Gallery_view)">Gallery</a>
+      <a (click)="onScrollTo(Gallery)">Gallery</a>
     </li>
     <li class="navbar-menu-item" id="anchor-Video">
       <a (click)="onScrollTo(Video)">Video</a>
@@ -22,7 +22,7 @@
 </div>
 
 <div #Home></div>
-<div id="Home" class="home">
+<div id="Home" appParallax [ratio]="-0.12" class="home">
   <div class="home-page">
     <div class="home-page-content">
     </div>
@@ -30,41 +30,39 @@
 </div>
 
 <div class="title">
-  <img id="title-logo" src="assets/Img/Logo.svg" class="image-circle" alt="Logo Dublin">
+  <img id="title-logo" src="assets/Img/Logo.svg" (play)="turnLogo(1, 'title-logo')" class="image-circle"
+       alt="Logo Dublin">
   <p>
-    This is a ePortfolio about my English Stay in Dublin, Ireland in 2022.
+    I welcome you to my ePortfolio. My Name is Moiz Jamalia and currently
+    years old.
   </p>
 </div>
 
 <div #Gallery_view id="gallery_view"></div>
-<div id="gallery" class="gallery-container">
-  <div *ngFor="let picture of pictures; let i = index">
-    <section id="gallery-item-{{i + 1}}" class="gallery-item">
-      <div class="gallery-content">
-        <div class="margin-0">
-          <a
-            class="gallery-content-link text-white wide-text-left">
-            <p (mouseenter)="unedited(true)" (mouseleave)="unedited(false)">unedited</p>
-          </a>
-          <div class="gallery-content-main">
-            <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" alt="Sea original">
-            <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" alt="Sea edited">
-            <p class="gallery-content-main-description text-white">
-              {{picture.description}}
-            </p>
-          </div>
-          <a
-            class="gallery-content-link text-white wide-text-right">
-            <p (mouseenter)="description(true)" (mouseleave)="description(false)">description</p>
-          </a>
-        </div>
+<div #Gallery id="gallery" class="gallery-container">
+  <section id="gallery-item-{{i + 1}}" class="gallery-item" *ngFor="let picture of pictures; let i = index">
+    <div class="gallery-content">
+      <a
+        class="gallery-content-link text-white wide-text-left">
+        <p (mouseenter)="unedited(true)" (mouseleave)="unedited(false)">unedited</p>
+      </a>
+      <div class="gallery-content-main">
+        <img class="gallery-content-main-image original" [src]="picture.originalPictureURL" [alt]="picture.altOriginal">
+        <img class="gallery-content-main-image edited" [src]="picture.editedPictureURL" [alt]="picture.altEdited">
+        <p class="gallery-content-main-description text-white">
+          {{picture.description}}
+        </p>
       </div>
-    </section>
-  </div>
+      <a
+        class="gallery-content-link text-white wide-text-right">
+        <p (mouseenter)="description(true)" (mouseleave)="description(false)">description</p>
+      </a>
+    </div>
+  </section>
 </div>
 
 <div #Video id="cover"></div>
 <div id="video" class="video-container">
-  <iframe  class="video-player" [src]="safeURL" allowfullscreen></iframe>
+  <iframe class="video-player" [src]="safeURL"></iframe>
 </div>
 

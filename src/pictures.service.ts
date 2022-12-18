@@ -9,17 +9,23 @@ export class PicturesService {
     new Pictures(
       'assets/Img/gallery/Sea_original.png',
       'assets/Img/gallery/Sea_edited.png',
-      'Sea'
+      'A view From the coast of a little Village called Howth. On that day me and some Friends went to Howth and enjoy the beautiful view from the hill.',
+      'Sea Original',
+      'Sea Edited'
     ),
     new Pictures(
       'assets/Img/gallery/Sea_original.png',
       'assets/Img/gallery/Sea_edited.png',
-      'Sea2'
+      'Sea2',
+      'Sea Original',
+      'Sea Edited'
     ),
     new Pictures(
       'assets/Img/gallery/Sea_original.png',
       'assets/Img/gallery/Sea_edited.png',
-      'Sea3'
+      'Sea3',
+    'Sea Original',
+    'Sea Edited'
     )
   ];
 

@@ -111,6 +111,13 @@ body {
   }
 }
 
+#Home {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
 .title {
   position: fixed;
   top: calc(40% + 5.2vh);
@@ -138,20 +145,19 @@ body {
 
 .home-page {
   width: 100%;
-  height: 100vh;
-  background: 0;
-  position: relative;
+  height: 100%;
+  position: fixed;
   overflow: hidden;
 
   &::after {
-    content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background: url("~src/assets/Img/gallery/Sea_original.png");
-    background-size: cover !important;
+    background-size: cover;
+    content: "";
   }
 }
 
@@ -161,7 +167,7 @@ body {
 }
 
 .gallery-container {
-  background-color: #004519;
+  background-color: #5FB165;
   position: absolute;
   top: 100%;
   height: calc(400% - 11vh);
@@ -171,16 +177,18 @@ body {
 
   .gallery-content {
     font-size: 3vh;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
 
     @media (max-width: 1140px) {
       &-link {
         width: 100% !important;
         height: inherit !important;
-        line-height: inherit !important;
-      }
-      &-main {
-        &-image {
-          max-height: 80% !important;
+
+        p {
+          line-height: inherit !important;
         }
       }
 
@@ -189,12 +197,18 @@ body {
       }
     }
 
+
     &-link {
       width: 15%;
       padding: 0;
       cursor: pointer;
       height: 90vh;
+      position: center;
       text-align: center;
+
+      p {
+        line-height: 80vh;
+      }
     }
 
     &-main {
@@ -204,6 +218,7 @@ body {
       .original {
         opacity: 0;
       }
+
       &-image {
         max-height: 70%;
         max-width: 80%;
@@ -215,6 +230,7 @@ body {
         transform: translate(-50%, -52%);
         transition: all 0.5s;
       }
+
       &-description {
         opacity: 0;
         max-width: 65vh;
@@ -226,7 +242,7 @@ body {
       }
 
       @media (max-width: 700px) {
-        &-reflection {
+        &-description {
           width: 44vh;
         }
       }
@@ -237,7 +253,7 @@ body {
 .gallery-item {
   position: relative;
   z-index: 10;
-  height: 90vh;
+  height: 100vh;
   min-width: 100%;
   background-color: #5FB165;
 }
@@ -274,6 +290,18 @@ body {
 .text-white {
   color: #FFFFFF;
 
+  &-wide-left {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+  }
+
+  &-wide-right {
+    display: flex;
+    flex-direction: row;
+    right: 0;
+  }
+
   &-bold {
     font-weight: bold;
   }
@@ -284,6 +312,7 @@ body {
     &-left {
       margin-left: 2%;
     }
+
     &-right {
       width: 9% !important;
       margin-left: -1.5%;
