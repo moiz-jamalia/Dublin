@@ -26,6 +26,18 @@ export class PortfolioComponent implements OnInit {
     this.pictures = this.picService.getPictures();
   }
 
+  ngOnInit(): void {
+    this.turnLogo(1, 'title-logo');
+    this.calculate_age();
+  }
+
+  calculate_age() : number {
+    const birthday = new Date('11/21/2002').getTime();
+    // @ts-ignore
+    let timeDiff = new Date() - birthday;
+    return  Math.floor(((timeDiff / (1000 * 3600 * 24)) / 365.25));
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
     // @ts-ignore
@@ -35,7 +47,6 @@ export class PortfolioComponent implements OnInit {
     if (Offset >= -65 && Offset <= 2000) {
       this.highlight('anchor-Gallery', 'anchor-Home', 'anchor-Video');
       this.itemFocus = this.checkWhichGalleryItem(Offset);
-      console.log(this.itemFocus);
       for (let i = 0; i < parent.children.length; i++) {
         this.renderer.setStyle(parent.children[i], 'position', 'fixed');
         this.renderer.setStyle(parent.children[i], 'top', '10vh');
@@ -93,10 +104,6 @@ export class PortfolioComponent implements OnInit {
     document.getElementById(inactive).classList.remove('active')
     // @ts-ignore
     document.getElementById(inactive1).classList.remove('active')
-  }
-
-  ngOnInit(): void {
-    this.turnLogo(1, 'title-logo');
   }
 
   turnLogo(nb: number, id: string) {
