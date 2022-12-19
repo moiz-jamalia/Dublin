@@ -24,8 +24,8 @@ export class PicturesService {
       'assets/Img/gallery/Phoenix_park_original.png',
       'assets/Img/gallery/Phoenix_park_edited.png',
       'We went to the Phoenix park and chilled there near the tower',
-    'Phoenix Park Original',
-    'Phoenix Park Edited'
+      'Phoenix Park Original',
+      'Phoenix Park Edited'
     )
   ];
 
