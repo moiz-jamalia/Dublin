@@ -31,11 +31,11 @@ export class PortfolioComponent implements OnInit {
     this.calculate_age();
   }
 
-  calculate_age() : number {
+  calculate_age(): number {
     const birthday = new Date('11/21/2002').getTime();
     // @ts-ignore
     let timeDiff = new Date() - birthday;
-    return  Math.floor(((timeDiff / (1000 * 3600 * 24)) / 365.25));
+    return Math.floor(((timeDiff / (1000 * 3600 * 24)) / 365.25));
   }
 
   @HostListener('window:scroll', ['$event'])

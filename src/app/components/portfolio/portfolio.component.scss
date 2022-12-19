@@ -212,6 +212,10 @@ body {
       }
     }
 
+    &-link:hover {
+      text-decoration: underline;
+    }
+
     &-main {
       width: 70%;
       padding: 0;
@@ -301,10 +305,6 @@ body {
     display: flex;
     flex-direction: row;
     right: 0;
-  }
-
-  &-bold {
-    font-weight: bold;
   }
 }
 
