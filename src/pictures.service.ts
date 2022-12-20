@@ -21,11 +21,11 @@ export class PicturesService {
       'Man of Matches Edited'
     ),
     new Pictures(
-      'assets/Img/gallery/Phoenix_park_original.png',
-      'assets/Img/gallery/Phoenix_park_edited.png',
+      'assets/Img/gallery/wellington_tower_original.png',
+      'assets/Img/gallery/wellington_tower_edited.png',
       'We went to the Phoenix park and chilled there near the tower',
-      'Phoenix Park Original',
-      'Phoenix Park Edited'
+      'wellington tower Original',
+      'wellington tower Edited'
     )
   ];
 
