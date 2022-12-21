@@ -199,7 +199,6 @@ body {
       }
     }
 
-
     &-link {
       width: 15%;
       padding: 0;
@@ -306,6 +305,24 @@ body {
     display: flex;
     flex-direction: row;
     right: 0;
+  }
+}
+
+.wide-text {
+  &-left {
+    @media (max-width: 1140px) {
+      z-index: 1;
+      position: absolute;
+      margin-top: 5vh;
+    }
+  }
+
+  &-right {
+    @media (max-width: 1140px) {
+      z-index: 1;
+      position: absolute;
+      margin-top: 75vh;
+    }
   }
 }
 
