@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
-import { Pictures } from "./app/pictures.model";
+import {Injectable} from "@angular/core";
+import {Pictures} from "./app/pictures.model";
 
 @Injectable({
-  providedIn : 'root'
+  providedIn: 'root'
 })
 export class PicturesService {
-  private _pictures : Pictures[] = [
+  private _pictures: Pictures[] = [
     new Pictures(
       'assets/Img/gallery/Sea_original.png',
       'assets/Img/gallery/Sea_edited.png',

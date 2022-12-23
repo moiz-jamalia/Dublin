@@ -14,7 +14,7 @@ export class PortfolioComponent implements OnInit {
   @ViewChild('Home') home: ElementRef | any;
   @ViewChild('Gallery_view') gallery: ElementRef | any;
   @ViewChild('Video') video: ElementRef | any;
-  videoURL = 'https://www.youtube.com/embed/xm3YgoEiEDc';
+  videoURL = 'https://www.youtube.com/embed/3NaPhxiy8lY';
   safeURL: SafeResourceUrl;
   isShownOriginalPic = false;
   isShownDescription = false;
