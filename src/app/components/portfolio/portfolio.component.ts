@@ -40,19 +40,19 @@ export class PortfolioComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(): void {
-          // @ts-ignore
-          const parent: HTMLElement = document.getElementById('gallery');
-        const Offset: number = Math.round((window.scrollY - parent.offsetTop) - (this.gallery.nativeElement.offsetHeight / 3 - (0.11 * this.gallery.nativeElement.offsetHeight / 4)));
-        console.log("Offset: " + Offset);
-        if (Offset >= -65 && Offset <= 2000) {
-          this.highlight('anchor-Gallery', 'anchor-Home', 'anchor-Video');
-          this.itemFocus = this.checkWhichGalleryItem(Offset);
-          for (let i = 0; i < parent.children.length; i++) {
-            this.renderer.setStyle(parent.children[i], 'position', 'fixed');
-            this.renderer.setStyle(parent.children[i], 'top', '8vh');
-            this.renderer.setStyle(parent.children[i], 'height', '85vh');
-            if (Offset <= -30) this.renderer.setStyle(parent.children[0], 'left', 0);
-            else this.renderer.setStyle(parent.children[i], 'left', (i * 100) - (Math.round(Offset / 10)) + '%');
+    // @ts-ignore
+    const parent: HTMLElement = document.getElementById('gallery');
+    const Offset: number = Math.round((window.scrollY - parent.offsetTop) - (this.gallery.nativeElement.offsetHeight / 3 - (0.11 * this.gallery.nativeElement.offsetHeight / 4)));
+    console.log("Offset: " + Offset);
+    if (Offset >= -65 && Offset <= 2000) {
+      this.highlight('anchor-Gallery', 'anchor-Home', 'anchor-Video');
+      this.itemFocus = this.checkWhichGalleryItem(Offset);
+      for (let i = 0; i < parent.children.length; i++) {
+        this.renderer.setStyle(parent.children[i], 'position', 'fixed');
+        this.renderer.setStyle(parent.children[i], 'top', '8vh');
+        this.renderer.setStyle(parent.children[i], 'height', '85vh');
+        if (Offset <= -30) this.renderer.setStyle(parent.children[0], 'left', 0);
+        else this.renderer.setStyle(parent.children[i], 'left', (i * 100) - (Math.round(Offset / 10)) + '%');
       }
     } else if (Offset > 2000) {
       this.highlight('anchor-Video', 'anchor-Home', 'anchor-Gallery');
