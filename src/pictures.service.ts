@@ -16,14 +16,14 @@ export class PicturesService {
     new Pictures(
       'assets/Img/gallery/man_of_matches_original.png',
       'assets/Img/gallery/man_of_matches_edited.png',
-      'A work of art depicting a man made of matches, painted on a demolished house wall.',
+      'By walking around in the center of the city I saw this work of Art painted on a demolished wall. The special thing about the painting was that the person is depicted with matches. ',
       'Man of Matches Original',
       'Man of Matches Edited'
     ),
     new Pictures(
       'assets/Img/gallery/wellington_tower_original.png',
       'assets/Img/gallery/wellington_tower_edited.png',
-      'We went to the Phoenix park and chilled there near the tower',
+      'We went to the Phoenix park and went to the wellington tower. When we arrived at the tower, we looked for a shady spot and stayed there for a while.',
       'wellington tower Original',
       'wellington tower Edited'
     )
